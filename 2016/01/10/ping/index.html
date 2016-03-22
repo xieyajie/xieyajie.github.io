@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <title>Python实现ping | xyj的博客</title>
+  <meta name="description" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="MobileOptimized" content="320" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="/css/component.css" />
+  <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+  <meta name="generator" content="xyj的博客">
+  <script src="http://static.duoshuo.com/embed.js"></script>
+  
+  
+  
+
+  
+
+</head>
+<body>
+<div class="container">
+    <div class="mp-pusher" id="mp-pusher">
+        <i id="scroll-up" class="fa fa-angle-up"></i>
+        <nav id="mp-menu" class="mp-menu">
+            <div class="mp-level">
+                <a data-pjax class="back-home" style="font-size: 20px" href="/"><h2 ><i class="fa fa-home"></i>
+                        Home</h2></a>
+                <ul class="first-level">
+                    <li>
+                        <a class="fa fa-archive" href="#"><i class="fa fa-angle-left">
+                            </i>&nbsp;&nbsp;Archive</a>
+                        <div class="mp-level page-list">
+                            <h2 ><i class="fa fa-archive"></i>
+                                Archive</h2>
+                            <a class="mp-back" href="#">back</a>
+                            <form id="search-form" action="">
+                                <input type="text" class="search search-archive" placeholder="Search.."/>
+                            </form>
+                            <ul>
+                                <div class="mp-scroll">
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2016/01/11/installPython/">Mac卸载并安装Python</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2016/01/10/ping/">Python实现ping</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2016/01/06/C-11-Mutex/">C++11新特性 之 Mutex</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2016/01/05/backhatpython03/">Python黑帽子学习笔记03 数据包IP头解析</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2016/01/04/backhatpython02/">Python黑帽子学习笔记02 TCP &amp; UDP</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/12/29/SpecificationNotes/">iOS规范注释格式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/12/25/hello-world/">Hello World</a>
+                                </li>
+                                
+                                </div>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="fa fa-copy" href="#"><i class="fa fa-angle-left">
+                            </i>&nbsp;&nbsp;Categories</a>
+
+                        <div class="mp-level page-list">
+                            <h2 ><i class="fa fa-copy"></i>
+                                Categories</h2>
+                            <a class="mp-back" href="#">back</a>
+                            <form id="search-form" action="">
+                                <input type="text" class="search search-category" placeholder="Search.."/>
+                            </form>
+                            <ul>
+                                <div class="mp-scroll">
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/blog/">&nbsp;&nbsp;&nbsp;blog</a>
+                                    <small>7</small>
+                                </li>
+                                
+                                </div>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="fa fa-tags" href="#"><i class="fa fa-angle-left">
+                            </i>&nbsp;&nbsp;Tags</a>
+                        <div class="mp-level page-list">
+                            <h2 ><i class="fa fa-tags"></i>
+                                Tags</h2>
+                            <a class="mp-back" href="#">back</a>
+                            <form id="search-form" action="">
+                                <input type="text" class="search search-tag" placeholder="Search.."/>
+                            </form>
+                            <ul>
+                                <div class="mp-scroll">
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/C/">&nbsp;&nbsp;&nbsp;C++</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/Other/">&nbsp;&nbsp;&nbsp;Other</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/Python/">&nbsp;&nbsp;&nbsp;Python</a>
+                                    <small>4</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/iOS/">&nbsp;&nbsp;&nbsp;iOS</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                </div>
+                            </ul>
+                        </div>
+                    </li>
+                    
+                    <li class="mp-pjax"><a class="fa fa-user" href="/about">&nbsp;&nbsp;&nbsp;About me</a></li>
+                    <li><a class="fa fa-github" href="#">&nbsp;&nbsp;&nbsp;Github</a></li>
+
+                </ul>
+
+            </div>
+        </nav>
+        <div id="pjax">
+            <div class="pjax-hidden" style="display: none">
+                
+                    <a  data-pjax href="/2016/01/11/installPython/">Mac卸载并安装Python</a>
+                
+                    <a  data-pjax href="/2016/01/10/ping/">Python实现ping</a>
+                
+                    <a  data-pjax href="/2016/01/06/C-11-Mutex/">C++11新特性 之 Mutex</a>
+                
+                    <a  data-pjax href="/2016/01/05/backhatpython03/">Python黑帽子学习笔记03 数据包IP头解析</a>
+                
+                    <a  data-pjax href="/2016/01/04/backhatpython02/">Python黑帽子学习笔记02 TCP &amp; UDP</a>
+                
+                    <a  data-pjax href="/2015/12/29/SpecificationNotes/">iOS规范注释格式</a>
+                
+                    <a  data-pjax href="/2015/12/25/hello-world/">Hello World</a>
+                
+                
+                    <a data-pjax href="/categories/blog/">&nbsp;&nbsp;blog</a>
+                
+                
+                    <a data-pjax href="/tags/C/">&nbsp;&nbsp;C++</a>
+                
+                    <a data-pjax href="/tags/Other/">&nbsp;&nbsp;Other</a>
+                
+                    <a data-pjax href="/tags/Python/">&nbsp;&nbsp;Python</a>
+                
+                    <a data-pjax href="/tags/iOS/">&nbsp;&nbsp;iOS</a>
+                
+                <a data-pjax class="fa fa-user" href="/about">&nbsp;&nbsp;&nbsp;About me</a>
+            </div>
+            <nav class="nexus">
+                <li  style="border-left: 1px solid #c6d0da;">
+                    <a id="trigger" href="#"><i class="fa fa-bars"></i></a>
+                </li>
+                <li ><a id="nexus-back" data-pjax href="/">xyj的博客</a></li>
+                
+                <div id="nav-container">
+                    <div class="post-navbar" style="line-height: 63px;display:none">
+                        <li id="navbar-title"><a href="#">Python实现ping</a></li>
+                        <li id="navbar-toc" style="border-left: none">
+                            <a style="padding-right: 15px">
+                                <span id="toc-content" >Introduction</span><i class="fa fa-chevron-down" ></i>
+                            </a>
+                            <div class="hidden-box">
+                                <ul id="toc"></ul>
+                            </div>
+                        </li>
+                    </div>
+                </div>
+                
+            </nav>
+
+            <div class="scroller">
+            <div class="scroller-inner">
+
+
+<!-- -->
+<!--<body class="post-template">-->
+<!---->
+  
+
+<main class="content" role="main">
+    <article class="post" >
+    <span class="post-meta">
+                  <div class="tag-tile">
+                      
+                      
+                      <a data-pjax href='/tags/Python/' style='color:#D5D5D5'>Python</a>
+                      
+                      
+                  </div>
+                <h1 class="post-title" style="margin: 14px 0;color:#50585D">Python实现ping</h1>
+
+                    <div class="post-meta">
+                        Post on<span class="fa fa-clock-o"></span>
+                        <time datetime="2016-01-10T02:53:32.000Z"
+                              itemprop="datePublished">2016-01-10</time>
+                    </div>
+    </span>
+
+        <section class="post-content">
+            <h2 id="ICMP-Internet-Control-Message-Protocol"><a href="#ICMP-Internet-Control-Message-Protocol" class="headerlink" title="ICMP (Internet Control Message Protocol)"></a>ICMP (Internet Control Message Protocol)</h2><ol>
+<li>ICMP是TCP/IP协议集中的一个子协议,属于网络层协议, 主要用于在主机与路由器之间传递控制信息, 包括报告错误、交换受限控制和状态信息等。通过这些消息来对网络或主机的故障提供参考依据。</li>
+<li>当遇到IP数据无法访问目标、IP路由器无法按当前的传输速率转发数据包等情况时，会自动发送ICMP消息。</li>
+</ol>
+<h2 id="Ping-原理"><a href="#Ping-原理" class="headerlink" title="Ping 原理"></a>Ping 原理</h2><p>术语描述：</p>
+<p>利用网络上机器IP地址的唯一性，给目标IP地址发送一个数据包，再要求对方返回一个同样大小的数据包来确定两台网络机器是否连接相通，时延是多少。</p>
+<p>举例说明：</p>
+<ol>
+<li>两台主机A和B, 其中B的IP地址为192.168.0.7。</li>
+<li>在A上运行 “ping 192.168.0.7”, 首先会构建固定格式的ICMP请求数据包, 由ICMP协议将这个数据包和B的IP地址传给IP层协议，IP层协议构造IP数据包，并得到B的MAC地址，一起传给数据链路层构建数据帧。</li>
+<li>B收到该数据帧，检查该数据帧的目的地址是够是自己的MAC地址，若不符合，丢弃；若符合，从数据帧中提起IP数据包，传给B的IP层协议；IP层进行相关检测，将ICMP数据包提取出来传给ICMP协议，ICMP协议构造应答包，用第2条相同方发给B。</li>
+</ol>
+<p>获取B的MAC地址（物理地址）</p>
+<ol>
+<li>同一网段</li>
+</ol>
+<p>IP层协议通过本身的子网掩码和B的IP地址，检查是否属于同一网段。若在同一网段，直接在本网络内查找B的MAC地址。如果A和B曾经进行过通信，在A的ARP缓存表应该会有B的IP与MAC的映射。如果没有，则发ARP请求广播。</p>
+<ol>
+<li>不同网段</li>
+</ol>
+<p>IP层协议通过本身的子网掩码和B的IP地址，检查是否属于同一网段。若不在同一网段，则直接取路由的MAC地址。路由得到该数据帧，再跟B进行联系，若找不到，则给A发超时信息。</p>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">IP</span><span class="params">(Structure)</span>:</span></span><br><span class="line"></span><br><span class="line">    _fields_ = [</span><br><span class="line">        (<span class="string">"ihl"</span>, c_ubyte, <span class="number">4</span>),</span><br><span class="line">        (<span class="string">"version"</span>, c_ubyte, <span class="number">4</span>),</span><br><span class="line">        (<span class="string">"tos"</span>, c_ubyte),</span><br><span class="line">        (<span class="string">"len"</span>, c_ushort),</span><br><span class="line">        (<span class="string">"id"</span>, c_ushort),</span><br><span class="line">        (<span class="string">"offset"</span>, c_ushort),</span><br><span class="line">        (<span class="string">"ttl"</span>, c_ubyte),</span><br><span class="line">        (<span class="string">"protocol_num"</span>, c_ubyte),</span><br><span class="line">        (<span class="string">"sum"</span>, c_ushort),</span><br><span class="line">        (<span class="string">"src"</span>, c_uint32),</span><br><span class="line">        (<span class="string">"dst"</span>, c_uint32)</span><br><span class="line">    ]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__new__</span><span class="params">(cls, socket_buffer=None)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> cls.from_buffer_copy(socket_buffer)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, socket_buffer=None)</span>:</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ICMP</span><span class="params">(Structure)</span>:</span></span><br><span class="line"></span><br><span class="line">    _fields_ = [</span><br><span class="line">        (<span class="string">"type"</span>, c_ubyte),</span><br><span class="line">        (<span class="string">"code"</span>, c_ubyte),</span><br><span class="line">        (<span class="string">"checksum"</span>, c_ushort),</span><br><span class="line">        (<span class="string">"unused"</span>, c_ushort),</span><br><span class="line">        (<span class="string">"next_hop_mtu"</span>, c_ushort)</span><br><span class="line">    ]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__new__</span><span class="params">(cls, socket_buffer)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> cls.from_buffer_copy(socket_buffer)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, socket_buffer)</span>:</span></span><br><span class="line">        <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+
+        </section>
+        <hr/>
+        <nav class="pagination" style="width:auto" role="pagination">
+            
+            <a data-pjax class="newer-posts" href="/2016/01/11/installPython/">← Prev Post</a>
+            
+            <a class="share-button" data-original-title title>Share this Post</a>
+            
+            <a data-pjax class="older-posts" href="/2016/01/06/C-11-Mutex/">Next Post →</a>
+            
+        </nav>
+        <br/>
+        <br/>
+        <section id="comment">
+            <div id="comment-box"></div>
+        </section>
+
+
+    </article>
+</main>
+
+
+  
+<footer class="site-footer">
+    
+    <div class="inner">
+        <section class="copyright"><a href="/"></a> &copy; xyj的博客 2014</section>
+        <section class="poweredby">Published with <a target="_blank" href="http://hexo.io/">Hexo   </a> and Theme by <a target="_blank" href="https://github.com/yuche/hexo-theme-kael">Kael</a></section>
+    </div>
+</footer>
+</div>
+</div><!-- /scroller -->
+
+</div><!-- /pusher -->
+</div><!-- /container -->
+</div>
+
+<!-- Easter eggs -->
+
+<div class="egg animated">
+    <a id="close-button" href="#">X</a>
+    <div class="block">
+        <div class="loading">
+            <span class="ball1"></span>
+            <span class="ball2"></span>
+        </div>
+    </div>
+</div>
+  
+<script src="//cdn.staticfile.org/jquery/1.11.0/jquery.min.js"></script>
+<script>
+    if (!window.jQuery) {
+        var script = document.createElement('script');
+        script.src = "/js/jquery.min.js";
+        document.body.appendChild(script);
+    }
+</script>
+<script type="text/javascript" src="/js/lib.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+
+
+
+
+
+
+
+</body>
+</html>

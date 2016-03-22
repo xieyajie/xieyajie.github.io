@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <title>Python黑帽子学习笔记03 数据包IP头解析 | xyj的博客</title>
+  <meta name="description" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="MobileOptimized" content="320" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="/css/component.css" />
+  <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+  <meta name="generator" content="xyj的博客">
+  <script src="http://static.duoshuo.com/embed.js"></script>
+  
+  
+  
+
+  
+
+</head>
+<body>
+<div class="container">
+    <div class="mp-pusher" id="mp-pusher">
+        <i id="scroll-up" class="fa fa-angle-up"></i>
+        <nav id="mp-menu" class="mp-menu">
+            <div class="mp-level">
+                <a data-pjax class="back-home" style="font-size: 20px" href="/"><h2 ><i class="fa fa-home"></i>
+                        Home</h2></a>
+                <ul class="first-level">
+                    <li>
+                        <a class="fa fa-archive" href="#"><i class="fa fa-angle-left">
+                            </i>&nbsp;&nbsp;Archive</a>
+                        <div class="mp-level page-list">
+                            <h2 ><i class="fa fa-archive"></i>
+                                Archive</h2>
+                            <a class="mp-back" href="#">back</a>
+                            <form id="search-form" action="">
+                                <input type="text" class="search search-archive" placeholder="Search.."/>
+                            </form>
+                            <ul>
+                                <div class="mp-scroll">
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2016/01/11/installPython/">Mac卸载并安装Python</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2016/01/10/ping/">Python实现ping</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2016/01/06/C-11-Mutex/">C++11新特性 之 Mutex</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2016/01/05/backhatpython03/">Python黑帽子学习笔记03 数据包IP头解析</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2016/01/04/backhatpython02/">Python黑帽子学习笔记02 TCP &amp; UDP</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/12/29/SpecificationNotes/">iOS规范注释格式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/12/25/hello-world/">Hello World</a>
+                                </li>
+                                
+                                </div>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="fa fa-copy" href="#"><i class="fa fa-angle-left">
+                            </i>&nbsp;&nbsp;Categories</a>
+
+                        <div class="mp-level page-list">
+                            <h2 ><i class="fa fa-copy"></i>
+                                Categories</h2>
+                            <a class="mp-back" href="#">back</a>
+                            <form id="search-form" action="">
+                                <input type="text" class="search search-category" placeholder="Search.."/>
+                            </form>
+                            <ul>
+                                <div class="mp-scroll">
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/blog/">&nbsp;&nbsp;&nbsp;blog</a>
+                                    <small>7</small>
+                                </li>
+                                
+                                </div>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="fa fa-tags" href="#"><i class="fa fa-angle-left">
+                            </i>&nbsp;&nbsp;Tags</a>
+                        <div class="mp-level page-list">
+                            <h2 ><i class="fa fa-tags"></i>
+                                Tags</h2>
+                            <a class="mp-back" href="#">back</a>
+                            <form id="search-form" action="">
+                                <input type="text" class="search search-tag" placeholder="Search.."/>
+                            </form>
+                            <ul>
+                                <div class="mp-scroll">
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/C/">&nbsp;&nbsp;&nbsp;C++</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/Other/">&nbsp;&nbsp;&nbsp;Other</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/Python/">&nbsp;&nbsp;&nbsp;Python</a>
+                                    <small>4</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/iOS/">&nbsp;&nbsp;&nbsp;iOS</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                </div>
+                            </ul>
+                        </div>
+                    </li>
+                    
+                    <li class="mp-pjax"><a class="fa fa-user" href="/about">&nbsp;&nbsp;&nbsp;About me</a></li>
+                    <li><a class="fa fa-github" href="#">&nbsp;&nbsp;&nbsp;Github</a></li>
+
+                </ul>
+
+            </div>
+        </nav>
+        <div id="pjax">
+            <div class="pjax-hidden" style="display: none">
+                
+                    <a  data-pjax href="/2016/01/11/installPython/">Mac卸载并安装Python</a>
+                
+                    <a  data-pjax href="/2016/01/10/ping/">Python实现ping</a>
+                
+                    <a  data-pjax href="/2016/01/06/C-11-Mutex/">C++11新特性 之 Mutex</a>
+                
+                    <a  data-pjax href="/2016/01/05/backhatpython03/">Python黑帽子学习笔记03 数据包IP头解析</a>
+                
+                    <a  data-pjax href="/2016/01/04/backhatpython02/">Python黑帽子学习笔记02 TCP &amp; UDP</a>
+                
+                    <a  data-pjax href="/2015/12/29/SpecificationNotes/">iOS规范注释格式</a>
+                
+                    <a  data-pjax href="/2015/12/25/hello-world/">Hello World</a>
+                
+                
+                    <a data-pjax href="/categories/blog/">&nbsp;&nbsp;blog</a>
+                
+                
+                    <a data-pjax href="/tags/C/">&nbsp;&nbsp;C++</a>
+                
+                    <a data-pjax href="/tags/Other/">&nbsp;&nbsp;Other</a>
+                
+                    <a data-pjax href="/tags/Python/">&nbsp;&nbsp;Python</a>
+                
+                    <a data-pjax href="/tags/iOS/">&nbsp;&nbsp;iOS</a>
+                
+                <a data-pjax class="fa fa-user" href="/about">&nbsp;&nbsp;&nbsp;About me</a>
+            </div>
+            <nav class="nexus">
+                <li  style="border-left: 1px solid #c6d0da;">
+                    <a id="trigger" href="#"><i class="fa fa-bars"></i></a>
+                </li>
+                <li ><a id="nexus-back" data-pjax href="/">xyj的博客</a></li>
+                
+                <div id="nav-container">
+                    <div class="post-navbar" style="line-height: 63px;display:none">
+                        <li id="navbar-title"><a href="#">Python黑帽子学习笔记03 数据包IP头解析</a></li>
+                        <li id="navbar-toc" style="border-left: none">
+                            <a style="padding-right: 15px">
+                                <span id="toc-content" >Introduction</span><i class="fa fa-chevron-down" ></i>
+                            </a>
+                            <div class="hidden-box">
+                                <ul id="toc"></ul>
+                            </div>
+                        </li>
+                    </div>
+                </div>
+                
+            </nav>
+
+            <div class="scroller">
+            <div class="scroller-inner">
+
+
+<!-- -->
+<!--<body class="post-template">-->
+<!---->
+  
+
+<main class="content" role="main">
+    <article class="post" >
+    <span class="post-meta">
+                  <div class="tag-tile">
+                      
+                      
+                      <a data-pjax href='/tags/Python/' style='color:#D5D5D5'>Python</a>
+                      
+                      
+                  </div>
+                <h1 class="post-title" style="margin: 14px 0;color:#50585D">Python黑帽子学习笔记03 数据包IP头解析</h1>
+
+                    <div class="post-meta">
+                        Post on<span class="fa fa-clock-o"></span>
+                        <time datetime="2016-01-05T02:11:03.000Z"
+                              itemprop="datePublished">2016-01-05</time>
+                    </div>
+    </span>
+
+        <section class="post-content">
+            <h2 id="定义数据包IP头结构体"><a href="#定义数据包IP头结构体" class="headerlink" title="定义数据包IP头结构体"></a>定义数据包IP头结构体</h2><p>使用模块 socket &amp; ctypes &amp; struct</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">IP</span><span class="params">(Structure)</span>:</span></span><br><span class="line">    _fields_ = [</span><br><span class="line">        <span class="comment"># 头长度, 4位</span></span><br><span class="line">        (<span class="string">"ih1"</span>, c_ubyte, <span class="number">4</span>),</span><br><span class="line">        <span class="comment"># 版本号, 4位. 目前采用的IP协议的版本号,一般的值为0100（IPv4），0110（IPv6）</span></span><br><span class="line">        (<span class="string">"version"</span>, c_ubyte, <span class="number">4</span>),</span><br><span class="line">        <span class="comment"># 服务类型, 8位</span></span><br><span class="line">        (<span class="string">"tos"</span>, c_ubyte, <span class="number">8</span>),</span><br><span class="line">        <span class="comment"># 包总长, 16位</span></span><br><span class="line">        (<span class="string">"len"</span>, c_ushort, <span class="number">16</span>),</span><br><span class="line">        <span class="comment"># 标识符, 16位</span></span><br><span class="line">        (<span class="string">"id"</span>, c_ushort, <span class="number">16</span>),</span><br><span class="line">        <span class="comment"># 标志, 3位</span></span><br><span class="line">        <span class="comment"># 片偏移, 13位</span></span><br><span class="line">        (<span class="string">"offset"</span>, c_ushort, <span class="number">16</span>),</span><br><span class="line">        <span class="comment"># 生存时间, 8位. 当IP包经过每一个沿途的路由器的时候，每个沿途的路由器会将IP包的TTL值减少1。</span></span><br><span class="line">        <span class="comment"># 如果TTL减少为0，则该IP包会被丢弃</span></span><br><span class="line">        (<span class="string">"ttl"</span>, c_ubyte, <span class="number">8</span>),</span><br><span class="line">        <span class="comment"># 协议, 8位. 1:ICMP 2:IGMP 6:TCP 17:UDP 88:IGRP 89:OSPF</span></span><br><span class="line">        (<span class="string">"protocol_num"</span>, c_ubyte, <span class="number">8</span>),</span><br><span class="line">        <span class="comment"># 头部校验, 16位</span></span><br><span class="line">        (<span class="string">"sum"</span>, c_ushort, <span class="number">8</span>),</span><br><span class="line">        <span class="comment"># 发送地址, 32位</span></span><br><span class="line">        (<span class="string">"src"</span>, c_uint32, <span class="number">32</span>),</span><br><span class="line">        <span class="comment"># 目标地址, 32位</span></span><br><span class="line">        (<span class="string">"dst"</span>, c_uint32, <span class="number">32</span>)</span><br><span class="line">    ]</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__new__</span><span class="params">(cls, socket_buffer=None)</span>:</span></span><br><span class="line">        <span class="comment"># 将原始缓冲区中的数据填充到结构中</span></span><br><span class="line">        <span class="keyword">return</span> cls.from_buffer_copy(socket_buffer)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, socket_buffer=None)</span>:</span></span><br><span class="line">        self.protocol_map = &#123;<span class="number">1</span>: <span class="string">"ICMP"</span>, <span class="number">6</span>: <span class="string">"TCP"</span>, <span class="number">17</span>: <span class="string">"UDP"</span>&#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment"># socket.inet_ntoa: 将32位形式的IP地址转换成字符串形式的IP地址,非线程安全</span></span><br><span class="line">        self.src_address = socket.inet_ntoa(struct.pack(<span class="string">"@I"</span>, self.src))</span><br><span class="line">        self.dst_address = socket.inet_ntoa(struct.pack(<span class="string">"@I"</span>, self.dst))</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            self.protocol = self.protocol_map[self.protocol_num]</span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            self.protocol = str(self.protocol_num)</span><br></pre></td></tr></table></figure>
+<h4 id="new-amp-init"><a href="#new-amp-init" class="headerlink" title="new() &amp; init()"></a><strong>new</strong>() &amp; <strong>init</strong>()</h4><ol>
+<li><p><strong>new</strong>() 静态方法. 实例化开始后,在<strong>init</strong>()之前调用. 没有重写,会自动调用父类;</p>
+</li>
+<li><p><strong>new</strong>()会返回cls的实例，然后该类的<strong>init</strong>()方法作为构造方法会接收这个实例（即self）作为自己的第一个参数，然后依次传入<strong>new</strong>()方法中接收的位置参数和命名参数;</p>
+</li>
+<li><p>如果<strong>new</strong>()没有返回cls（即当前类）的实例，那么当前类的<strong>init</strong>()方法是不会被调用的;</p>
+</li>
+<li><p>如果<strong>new</strong>()返回其他类(自定义类或系统类均可）的实例，那么只会调用被返回的那个类的构造方法.</p>
+</li>
+</ol>
+<h4 id="模块ctypes"><a href="#模块ctypes" class="headerlink" title="模块ctypes"></a>模块ctypes</h4><ol>
+<li><p>Structures和Unions必须继承Structure和Union基础类，它们都在ctypes模块中定义;</p>
+</li>
+<li><p>每一个子类必须定义<em>fields</em>属性，<em>fields</em>是一个二维的tuples列表，包含着每个field的name及type;</p>
+</li>
+<li><p>field类型必须是一个ctypes类型，如c_int，或者任何其他的继承ctypes的类型，如Structure, Union, Array, 指针等.</p>
+</li>
+</ol>
+<h4 id="模块struct"><a href="#模块struct" class="headerlink" title="模块struct"></a>模块struct</h4><ol>
+<li><p>pack(fmt, v1, v2, …)<br>按照给定的格式(fmt)，把数据封装成字符串(实际上是类似于c结构体的字节流)</p>
+</li>
+<li><p>unpack(fmt, string)<br>按照给定的格式(fmt)解析字节流string，返回解析出来的tuple</p>
+</li>
+<li><p>calcsize(fmt)<br>计算给定的格式(fmt)占用多少字节的内存</p>
+</li>
+</ol>
+<h2 id="获取数据包IP头数据"><a href="#获取数据包IP头数据" class="headerlink" title="获取数据包IP头数据"></a>获取数据包IP头数据</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> os.name == <span class="string">"nt"</span>:</span><br><span class="line">    socket_protocol = socket.IPPROTO_IP</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    socket_protocol = socket.IPPROTO_ICMP</span><br><span class="line"></span><br><span class="line">sniffer = socket.socket(socket.AF_INET, socket.SOCK_RAW, socket_protocol)</span><br><span class="line">sniffer.bind((host, <span class="number">0</span>))</span><br><span class="line">sniffer.setsockopt(socket.IPPROTO_IP, socket.IP_HDRINCL, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">	<span class="comment">#如果在Windows上,发送IOCTL信号到网卡驱动上以启用混杂模式</span></span><br><span class="line"><span class="keyword">if</span> os.name == <span class="string">"nt"</span>:</span><br><span class="line">    sniffer.ioctl(socket.SIO_RCVALL, socket.RCVALL_ON)</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">        raw_buffer = sniffer.recvfrom(<span class="number">65565</span>)[<span class="number">0</span>]</span><br><span class="line">        ip_header = IP(raw_buffer)</span><br><span class="line"></span><br><span class="line"><span class="keyword">except</span> KeyboardInterrupt:</span><br><span class="line">    <span class="keyword">if</span> os.name == <span class="string">"nt"</span>:</span><br><span class="line">        sniffer.ioctl(socket.SIO_RCVALL, socket.RCVALL_OFF)</span><br></pre></td></tr></table></figure>
+<h2 id="修改代码适应不同平台"><a href="#修改代码适应不同平台" class="headerlink" title="修改代码适应不同平台"></a>修改代码适应不同平台</h2><ol>
+<li><p>在书中给的例子中，结构体中变量src和dst是c_long类型，但c_ulong在i386是4bytes而在amd64是8bytes, 会运行失败。所以换成了c_uint32, 可以不考虑平台.</p>
+</li>
+<li><p>获取头数据时，书中所给代码ip_header = IP(raw_buffer[0:20])会造成运行失败，原因是在i386上头基本数据长度是20字节，而在amd64上是32字节。所有平台都可通过的写法是IP(raw_buffer)。</p>
+</li>
+</ol>
+<h2 id="扩展-gt-内存对齐"><a href="#扩展-gt-内存对齐" class="headerlink" title="扩展 -&gt; 内存对齐"></a>扩展 -&gt; 内存对齐</h2><p>基本类型不包括struct/class/uinon</p>
+<p>原则：</p>
+<ol>
+<li><p>基本类型数据成员对齐规则：结构(struct)(或联合(union))的数据成员，第一个数据成员放在offset为0的地方，结构体每个成员相对于结构体首地址的偏移量（offset）都是成员大小的整数倍，如有需要编译器会在成员之间加上填充字节（internal adding）.<br>比如: int在32位机为４字节, 则要从４的整数倍地址开始存储。</p>
+</li>
+<li><p>结构体作为成员:如果一个结构里有某些结构体成员,则结构体成员要从其内部”最宽基本类型成员”的整数倍地址开始存储.<br>比如: struct a里存有struct b, b里有char,int ,double等元素,那b应该从8的整数倍开始存储。</p>
+</li>
+<li><p>结构体的总大小,也就是sizeof的结果.必须是其内部最大成员的”最宽基本类型成员”的整数倍, 如有需要编译器会在最末一个成员之后加上填充字节（trailing padding）。</p>
+</li>
+<li><p>sizeof(union)，以结构里面size最大元素为union的size,因为在某一时刻，union只有一个成员真正存储于该地址。</p>
+</li>
+</ol>
+<p><a href="http://www.cppblog.com/snailcong/archive/2009/03/16/76705.html" target="_blank" rel="external">参考资料</a></p>
+
+        </section>
+        <hr/>
+        <nav class="pagination" style="width:auto" role="pagination">
+            
+            <a data-pjax class="newer-posts" href="/2016/01/06/C-11-Mutex/">← Prev Post</a>
+            
+            <a class="share-button" data-original-title title>Share this Post</a>
+            
+            <a data-pjax class="older-posts" href="/2016/01/04/backhatpython02/">Next Post →</a>
+            
+        </nav>
+        <br/>
+        <br/>
+        <section id="comment">
+            <div id="comment-box"></div>
+        </section>
+
+
+    </article>
+</main>
+
+
+  
+<footer class="site-footer">
+    
+    <div class="inner">
+        <section class="copyright"><a href="/"></a> &copy; xyj的博客 2014</section>
+        <section class="poweredby">Published with <a target="_blank" href="http://hexo.io/">Hexo   </a> and Theme by <a target="_blank" href="https://github.com/yuche/hexo-theme-kael">Kael</a></section>
+    </div>
+</footer>
+</div>
+</div><!-- /scroller -->
+
+</div><!-- /pusher -->
+</div><!-- /container -->
+</div>
+
+<!-- Easter eggs -->
+
+<div class="egg animated">
+    <a id="close-button" href="#">X</a>
+    <div class="block">
+        <div class="loading">
+            <span class="ball1"></span>
+            <span class="ball2"></span>
+        </div>
+    </div>
+</div>
+  
+<script src="//cdn.staticfile.org/jquery/1.11.0/jquery.min.js"></script>
+<script>
+    if (!window.jQuery) {
+        var script = document.createElement('script');
+        script.src = "/js/jquery.min.js";
+        document.body.appendChild(script);
+    }
+</script>
+<script type="text/javascript" src="/js/lib.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+
+
+
+
+
+
+
+</body>
+</html>

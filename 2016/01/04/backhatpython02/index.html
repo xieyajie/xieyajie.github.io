@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <title>Python黑帽子学习笔记02 TCP &amp; UDP | xyj的博客</title>
+  <meta name="description" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="MobileOptimized" content="320" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="/css/component.css" />
+  <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+  <meta name="generator" content="xyj的博客">
+  <script src="http://static.duoshuo.com/embed.js"></script>
+  
+  
+  
+
+  
+
+</head>
+<body>
+<div class="container">
+    <div class="mp-pusher" id="mp-pusher">
+        <i id="scroll-up" class="fa fa-angle-up"></i>
+        <nav id="mp-menu" class="mp-menu">
+            <div class="mp-level">
+                <a data-pjax class="back-home" style="font-size: 20px" href="/"><h2 ><i class="fa fa-home"></i>
+                        Home</h2></a>
+                <ul class="first-level">
+                    <li>
+                        <a class="fa fa-archive" href="#"><i class="fa fa-angle-left">
+                            </i>&nbsp;&nbsp;Archive</a>
+                        <div class="mp-level page-list">
+                            <h2 ><i class="fa fa-archive"></i>
+                                Archive</h2>
+                            <a class="mp-back" href="#">back</a>
+                            <form id="search-form" action="">
+                                <input type="text" class="search search-archive" placeholder="Search.."/>
+                            </form>
+                            <ul>
+                                <div class="mp-scroll">
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2016/01/11/installPython/">Mac卸载并安装Python</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2016/01/10/ping/">Python实现ping</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2016/01/06/C-11-Mutex/">C++11新特性 之 Mutex</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2016/01/05/backhatpython03/">Python黑帽子学习笔记03 数据包IP头解析</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2016/01/04/backhatpython02/">Python黑帽子学习笔记02 TCP &amp; UDP</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/12/29/SpecificationNotes/">iOS规范注释格式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/12/25/hello-world/">Hello World</a>
+                                </li>
+                                
+                                </div>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="fa fa-copy" href="#"><i class="fa fa-angle-left">
+                            </i>&nbsp;&nbsp;Categories</a>
+
+                        <div class="mp-level page-list">
+                            <h2 ><i class="fa fa-copy"></i>
+                                Categories</h2>
+                            <a class="mp-back" href="#">back</a>
+                            <form id="search-form" action="">
+                                <input type="text" class="search search-category" placeholder="Search.."/>
+                            </form>
+                            <ul>
+                                <div class="mp-scroll">
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/blog/">&nbsp;&nbsp;&nbsp;blog</a>
+                                    <small>7</small>
+                                </li>
+                                
+                                </div>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="fa fa-tags" href="#"><i class="fa fa-angle-left">
+                            </i>&nbsp;&nbsp;Tags</a>
+                        <div class="mp-level page-list">
+                            <h2 ><i class="fa fa-tags"></i>
+                                Tags</h2>
+                            <a class="mp-back" href="#">back</a>
+                            <form id="search-form" action="">
+                                <input type="text" class="search search-tag" placeholder="Search.."/>
+                            </form>
+                            <ul>
+                                <div class="mp-scroll">
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/C/">&nbsp;&nbsp;&nbsp;C++</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/Other/">&nbsp;&nbsp;&nbsp;Other</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/Python/">&nbsp;&nbsp;&nbsp;Python</a>
+                                    <small>4</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/iOS/">&nbsp;&nbsp;&nbsp;iOS</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                </div>
+                            </ul>
+                        </div>
+                    </li>
+                    
+                    <li class="mp-pjax"><a class="fa fa-user" href="/about">&nbsp;&nbsp;&nbsp;About me</a></li>
+                    <li><a class="fa fa-github" href="#">&nbsp;&nbsp;&nbsp;Github</a></li>
+
+                </ul>
+
+            </div>
+        </nav>
+        <div id="pjax">
+            <div class="pjax-hidden" style="display: none">
+                
+                    <a  data-pjax href="/2016/01/11/installPython/">Mac卸载并安装Python</a>
+                
+                    <a  data-pjax href="/2016/01/10/ping/">Python实现ping</a>
+                
+                    <a  data-pjax href="/2016/01/06/C-11-Mutex/">C++11新特性 之 Mutex</a>
+                
+                    <a  data-pjax href="/2016/01/05/backhatpython03/">Python黑帽子学习笔记03 数据包IP头解析</a>
+                
+                    <a  data-pjax href="/2016/01/04/backhatpython02/">Python黑帽子学习笔记02 TCP &amp; UDP</a>
+                
+                    <a  data-pjax href="/2015/12/29/SpecificationNotes/">iOS规范注释格式</a>
+                
+                    <a  data-pjax href="/2015/12/25/hello-world/">Hello World</a>
+                
+                
+                    <a data-pjax href="/categories/blog/">&nbsp;&nbsp;blog</a>
+                
+                
+                    <a data-pjax href="/tags/C/">&nbsp;&nbsp;C++</a>
+                
+                    <a data-pjax href="/tags/Other/">&nbsp;&nbsp;Other</a>
+                
+                    <a data-pjax href="/tags/Python/">&nbsp;&nbsp;Python</a>
+                
+                    <a data-pjax href="/tags/iOS/">&nbsp;&nbsp;iOS</a>
+                
+                <a data-pjax class="fa fa-user" href="/about">&nbsp;&nbsp;&nbsp;About me</a>
+            </div>
+            <nav class="nexus">
+                <li  style="border-left: 1px solid #c6d0da;">
+                    <a id="trigger" href="#"><i class="fa fa-bars"></i></a>
+                </li>
+                <li ><a id="nexus-back" data-pjax href="/">xyj的博客</a></li>
+                
+                <div id="nav-container">
+                    <div class="post-navbar" style="line-height: 63px;display:none">
+                        <li id="navbar-title"><a href="#">Python黑帽子学习笔记02 TCP &amp; UDP</a></li>
+                        <li id="navbar-toc" style="border-left: none">
+                            <a style="padding-right: 15px">
+                                <span id="toc-content" >Introduction</span><i class="fa fa-chevron-down" ></i>
+                            </a>
+                            <div class="hidden-box">
+                                <ul id="toc"></ul>
+                            </div>
+                        </li>
+                    </div>
+                </div>
+                
+            </nav>
+
+            <div class="scroller">
+            <div class="scroller-inner">
+
+
+<!-- -->
+<!--<body class="post-template">-->
+<!---->
+  
+
+<main class="content" role="main">
+    <article class="post" >
+    <span class="post-meta">
+                  <div class="tag-tile">
+                      
+                      
+                      <a data-pjax href='/tags/Python/' style='color:#D5D5D5'>Python</a>
+                      
+                      
+                  </div>
+                <h1 class="post-title" style="margin: 14px 0;color:#50585D">Python黑帽子学习笔记02 TCP & UDP</h1>
+
+                    <div class="post-meta">
+                        Post on<span class="fa fa-clock-o"></span>
+                        <time datetime="2016-01-04T04:48:23.000Z"
+                              itemprop="datePublished">2016-01-04</time>
+                    </div>
+    </span>
+
+        <section class="post-content">
+            <h2 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h2><h4 id="TCP-Client"><a href="#TCP-Client" class="headerlink" title="TCP-Client"></a>TCP-Client</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"></span><br><span class="line">client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)</span><br><span class="line">client.connect((<span class="string">"127.0.0.1"</span>, <span class="number">50002</span>))</span><br><span class="line"></span><br><span class="line">send_data = <span class="string">"haha, text 01"</span></span><br><span class="line">client.send(send_data.encode())</span><br><span class="line">print(<span class="string">"Client SEND: "</span> + send_data)</span><br><span class="line"></span><br><span class="line">recv_data = client.recv(<span class="number">4096</span>).decode()</span><br><span class="line">print(<span class="string">"Client RECV: "</span> + recv_data)</span><br><span class="line"></span><br><span class="line">client.close()</span><br></pre></td></tr></table></figure>
+<h4 id="TCP-Server"><a href="#TCP-Server" class="headerlink" title="TCP-Server"></a>TCP-Server</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"></span><br><span class="line">server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)</span><br><span class="line">server.bind((<span class="string">""</span>, <span class="number">50002</span>))</span><br><span class="line">server.listen(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">connection, addr = server.accept()</span><br><span class="line"><span class="keyword">if</span> connection:</span><br><span class="line">    recv_data = connection.recv(<span class="number">4096</span>).decode()</span><br><span class="line">    print(<span class="string">"Server RECV: "</span> + recv_data)</span><br><span class="line"></span><br><span class="line">    send_data = <span class="string">"Server ACK -&gt; "</span> + recv_data</span><br><span class="line">    connection.send(send_data.encode())</span><br></pre></td></tr></table></figure>
+<h2 id="UDP"><a href="#UDP" class="headerlink" title="UDP"></a>UDP</h2><h4 id="UDP-Client"><a href="#UDP-Client" class="headerlink" title="UDP-Client"></a>UDP-Client</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"></span><br><span class="line">client = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)</span><br><span class="line"></span><br><span class="line">send_data = <span class="string">"client udp data 01"</span></span><br><span class="line">client.sendto(send_data.encode(), (<span class="string">"127.0.0.1"</span>, <span class="number">60001</span>))</span><br><span class="line">print(<span class="string">"Client SEND: "</span> + send_data)</span><br><span class="line"></span><br><span class="line">recv_data, addr = client.recvfrom(<span class="number">4096</span>)</span><br><span class="line">print(<span class="string">"Client RECV: "</span> + recv_data.decode())</span><br></pre></td></tr></table></figure>
+<h4 id="UDP-Server"><a href="#UDP-Server" class="headerlink" title="UDP-Server"></a>UDP-Server</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"></span><br><span class="line">server = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)</span><br><span class="line">server.bind((<span class="string">""</span>, <span class="number">60001</span>))</span><br><span class="line"></span><br><span class="line">recv_data, addr = server.recvfrom(<span class="number">4096</span>)</span><br><span class="line">print(<span class="string">"Server RECV: "</span> + recv_data.decode())</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> recv_data:</span><br><span class="line">    send_data = <span class="string">"Server ACK -&gt; "</span> + recv_data.decode()</span><br><span class="line">    server.sendto(send_data.encode(), addr)</span><br><span class="line">    print(<span class="string">"Server SEND: "</span> + send_data)</span><br></pre></td></tr></table></figure>
+<h2 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h2><ol>
+<li>Server端先启动，在某一公认地址上开放一个端口，即代码中的 <strong><em>server.bind()</em></strong>, 等待Client的请求到达该端口。<br> Client端启动后，创建socket，通过Server端开放的地址和端口进行连接(TCP)或者发送数据(UDP)，即代码中的 <strong><em>client.connect()</em></strong> 和 <strong><em>client.sendto()</em></strong></li>
+<li>socket地址描述<br>socket.AF_INET: 将使用标准的IPv4地址或者主机名</li>
+<li>socket类型<br>socket.SOCK_STREAM: 有序的、可靠的、双向的和基于连接的字节流，使用带外数据传送机制，TCP<br>socket.SOCK_DGRAM: 无连接的、不可靠的和使用固定大小（通常很小）缓冲区的数据报服务, UDP</li>
+</ol>
+
+        </section>
+        <hr/>
+        <nav class="pagination" style="width:auto" role="pagination">
+            
+            <a data-pjax class="newer-posts" href="/2016/01/05/backhatpython03/">← Prev Post</a>
+            
+            <a class="share-button" data-original-title title>Share this Post</a>
+            
+            <a data-pjax class="older-posts" href="/2015/12/29/SpecificationNotes/">Next Post →</a>
+            
+        </nav>
+        <br/>
+        <br/>
+        <section id="comment">
+            <div id="comment-box"></div>
+        </section>
+
+
+    </article>
+</main>
+
+
+  
+<footer class="site-footer">
+    
+    <div class="inner">
+        <section class="copyright"><a href="/"></a> &copy; xyj的博客 2014</section>
+        <section class="poweredby">Published with <a target="_blank" href="http://hexo.io/">Hexo   </a> and Theme by <a target="_blank" href="https://github.com/yuche/hexo-theme-kael">Kael</a></section>
+    </div>
+</footer>
+</div>
+</div><!-- /scroller -->
+
+</div><!-- /pusher -->
+</div><!-- /container -->
+</div>
+
+<!-- Easter eggs -->
+
+<div class="egg animated">
+    <a id="close-button" href="#">X</a>
+    <div class="block">
+        <div class="loading">
+            <span class="ball1"></span>
+            <span class="ball2"></span>
+        </div>
+    </div>
+</div>
+  
+<script src="//cdn.staticfile.org/jquery/1.11.0/jquery.min.js"></script>
+<script>
+    if (!window.jQuery) {
+        var script = document.createElement('script');
+        script.src = "/js/jquery.min.js";
+        document.body.appendChild(script);
+    }
+</script>
+<script type="text/javascript" src="/js/lib.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+
+
+
+
+
+
+
+</body>
+</html>
