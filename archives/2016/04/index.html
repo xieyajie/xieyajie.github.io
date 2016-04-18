@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-  <title>Tag: iOS | xyj的博客</title>
+  <title>Archives: 2016/4 | xyj的博客</title>
   <meta name="description" content="" />
   <meta name="HandheldFriendly" content="True" />
   <meta name="MobileOptimized" content="320" />
@@ -224,29 +224,72 @@
             <div class="tag-tile">
                 
                 
-                <a data-pjax href='/tags/iOS/'>iOS</a>
+                <a data-pjax href='/tags/Python/'>Python</a>
                 
                 
                 <span class="fa fa-bookmark" style="float:right;color:#f39c12"></span>
             </div>
-            <h1 class="post-title"><a data-pjax href="/2015/12/29/SpecificationNotes/">iOS规范注释格式</a>
+            <h1 class="post-title"><a data-pjax href="/2016/04/16/scoket1/">Python socket函数</a>
             </h1>
 
             <div class="post-meta">
                 Post on<span class="fa fa-clock-o"></span>
-                <time datetime="2015-12-29T07:16:34.000Z"
-                      itemprop="datePublished">2015-12-29</time>
+                <time datetime="2016-04-16T03:23:32.000Z"
+                      itemprop="datePublished">2016-04-16</time>
             </div>
         </header>
         <section class="post-excerpt">
             <p>
                 
-                兼容 Headerdoc 和 Appledoc 和 Doxygen
-Header 头文件头文件的第一行
-123456/*! *  @header   头文件名称 *  @abstract 功能描述 *  @author   创建者 *  @version  版本 */
-Class类 &amp; Protocol协议 &amp; Category分类 &amp; Property属性类声明的上一行
-123/*! *  功能描述 */
-En
+                socket.send(string[,flags])返回发送的字节数，返回值可能小于要发送的string的字节数，即可能无法发送string中所有的数据。若出错抛出异常。
+socket.sendall(string[,flags])尝试发送string的所有数据，成功返回None，失败抛出异常。
+以下代码是等价的：
+1234buffer = 'Hello World'while buffer:	bytes = socket.send(
+                
+            </p>
+            
+        </section>
+    </article>
+    
+    <article class="post">
+
+        <header class="post-header">
+            <div class="tag-tile">
+                
+                
+                <a data-pjax href='/tags/Python/'>Python</a>
+                
+                
+                <span class="fa fa-bookmark" style="float:right;color:#f39c12"></span>
+            </div>
+            <h1 class="post-title"><a data-pjax href="/2016/04/07/py-audiototext/">Python 语音识别</a>
+            </h1>
+
+            <div class="post-meta">
+                Post on<span class="fa fa-clock-o"></span>
+                <time datetime="2016-04-06T23:53:32.000Z"
+                      itemprop="datePublished">2016-04-07</time>
+            </div>
+        </header>
+        <section class="post-excerpt">
+            <p>
+                
+                题目对着电脑吼一声,自动打开浏览器中的默认网站。
+例如，对着笔记本电脑吼一声“百度”，浏览器自动打开百度首页
+解题思路
+录制wav文件
+ 使用pyAudio模块
+
+wav文件转为文本
+ 使用百度语音识别功能
+
+打开浏览器
+ 使用webbrowser模块
+
+
+安装模块使用pyAudio模块， mac+python3下安装步骤如下:
+12$brew install portaudio$pip3 install pyaudio
+录制wav文件
                 
             </p>
             

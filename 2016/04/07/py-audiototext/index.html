@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <title>Python 语音识别 | xyj的博客</title>
+  <meta name="description" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="MobileOptimized" content="320" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="/css/component.css" />
+  <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+  <meta name="generator" content="xyj的博客">
+  <script src="http://static.duoshuo.com/embed.js"></script>
+  
+  
+  
+
+  
+
+</head>
+<body>
+<div class="container">
+    <div class="mp-pusher" id="mp-pusher">
+        <i id="scroll-up" class="fa fa-angle-up"></i>
+        <nav id="mp-menu" class="mp-menu">
+            <div class="mp-level">
+                <a data-pjax class="back-home" style="font-size: 20px" href="/"><h2 ><i class="fa fa-home"></i>
+                        Home</h2></a>
+                <ul class="first-level">
+                    <li>
+                        <a class="fa fa-archive" href="#"><i class="fa fa-angle-left">
+                            </i>&nbsp;&nbsp;Archive</a>
+                        <div class="mp-level page-list">
+                            <h2 ><i class="fa fa-archive"></i>
+                                Archive</h2>
+                            <a class="mp-back" href="#">back</a>
+                            <form id="search-form" action="">
+                                <input type="text" class="search search-archive" placeholder="Search.."/>
+                            </form>
+                            <ul>
+                                <div class="mp-scroll">
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2016/04/16/scoket1/">Python socket函数</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2016/04/07/py-audiototext/">Python 语音识别</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2016/01/11/installPython/">Mac卸载并安装Python</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2016/01/10/ping/">Python实现ping</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2016/01/06/C-11-Mutex/">C++11新特性 之 Mutex</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2016/01/05/backhatpython03/">Python黑帽子学习笔记03 数据包IP头解析</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2016/01/04/backhatpython02/">Python黑帽子学习笔记02 TCP &amp; UDP</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/12/29/SpecificationNotes/">iOS规范注释格式</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/12/25/hello-world/">Hello World</a>
+                                </li>
+                                
+                                </div>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="fa fa-copy" href="#"><i class="fa fa-angle-left">
+                            </i>&nbsp;&nbsp;Categories</a>
+
+                        <div class="mp-level page-list">
+                            <h2 ><i class="fa fa-copy"></i>
+                                Categories</h2>
+                            <a class="mp-back" href="#">back</a>
+                            <form id="search-form" action="">
+                                <input type="text" class="search search-category" placeholder="Search.."/>
+                            </form>
+                            <ul>
+                                <div class="mp-scroll">
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/blog/">&nbsp;&nbsp;&nbsp;blog</a>
+                                    <small>9</small>
+                                </li>
+                                
+                                </div>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="fa fa-tags" href="#"><i class="fa fa-angle-left">
+                            </i>&nbsp;&nbsp;Tags</a>
+                        <div class="mp-level page-list">
+                            <h2 ><i class="fa fa-tags"></i>
+                                Tags</h2>
+                            <a class="mp-back" href="#">back</a>
+                            <form id="search-form" action="">
+                                <input type="text" class="search search-tag" placeholder="Search.."/>
+                            </form>
+                            <ul>
+                                <div class="mp-scroll">
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/C/">&nbsp;&nbsp;&nbsp;C++</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/Other/">&nbsp;&nbsp;&nbsp;Other</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/Python/">&nbsp;&nbsp;&nbsp;Python</a>
+                                    <small>6</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/iOS/">&nbsp;&nbsp;&nbsp;iOS</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                </div>
+                            </ul>
+                        </div>
+                    </li>
+                    
+                    <li class="mp-pjax"><a class="fa fa-user" href="/about">&nbsp;&nbsp;&nbsp;About me</a></li>
+                    <li><a class="fa fa-github" href="#">&nbsp;&nbsp;&nbsp;Github</a></li>
+
+                </ul>
+
+            </div>
+        </nav>
+        <div id="pjax">
+            <div class="pjax-hidden" style="display: none">
+                
+                    <a  data-pjax href="/2016/04/16/scoket1/">Python socket函数</a>
+                
+                    <a  data-pjax href="/2016/04/07/py-audiototext/">Python 语音识别</a>
+                
+                    <a  data-pjax href="/2016/01/11/installPython/">Mac卸载并安装Python</a>
+                
+                    <a  data-pjax href="/2016/01/10/ping/">Python实现ping</a>
+                
+                    <a  data-pjax href="/2016/01/06/C-11-Mutex/">C++11新特性 之 Mutex</a>
+                
+                    <a  data-pjax href="/2016/01/05/backhatpython03/">Python黑帽子学习笔记03 数据包IP头解析</a>
+                
+                    <a  data-pjax href="/2016/01/04/backhatpython02/">Python黑帽子学习笔记02 TCP &amp; UDP</a>
+                
+                    <a  data-pjax href="/2015/12/29/SpecificationNotes/">iOS规范注释格式</a>
+                
+                    <a  data-pjax href="/2015/12/25/hello-world/">Hello World</a>
+                
+                
+                    <a data-pjax href="/categories/blog/">&nbsp;&nbsp;blog</a>
+                
+                
+                    <a data-pjax href="/tags/C/">&nbsp;&nbsp;C++</a>
+                
+                    <a data-pjax href="/tags/Other/">&nbsp;&nbsp;Other</a>
+                
+                    <a data-pjax href="/tags/Python/">&nbsp;&nbsp;Python</a>
+                
+                    <a data-pjax href="/tags/iOS/">&nbsp;&nbsp;iOS</a>
+                
+                <a data-pjax class="fa fa-user" href="/about">&nbsp;&nbsp;&nbsp;About me</a>
+            </div>
+            <nav class="nexus">
+                <li  style="border-left: 1px solid #c6d0da;">
+                    <a id="trigger" href="#"><i class="fa fa-bars"></i></a>
+                </li>
+                <li ><a id="nexus-back" data-pjax href="/">xyj的博客</a></li>
+                
+                <div id="nav-container">
+                    <div class="post-navbar" style="line-height: 63px;display:none">
+                        <li id="navbar-title"><a href="#">Python 语音识别</a></li>
+                        <li id="navbar-toc" style="border-left: none">
+                            <a style="padding-right: 15px">
+                                <span id="toc-content" >Introduction</span><i class="fa fa-chevron-down" ></i>
+                            </a>
+                            <div class="hidden-box">
+                                <ul id="toc"></ul>
+                            </div>
+                        </li>
+                    </div>
+                </div>
+                
+            </nav>
+
+            <div class="scroller">
+            <div class="scroller-inner">
+
+
+<!-- -->
+<!--<body class="post-template">-->
+<!---->
+  
+
+<main class="content" role="main">
+    <article class="post" >
+    <span class="post-meta">
+                  <div class="tag-tile">
+                      
+                      
+                      <a data-pjax href='/tags/Python/' style='color:#D5D5D5'>Python</a>
+                      
+                      
+                  </div>
+                <h1 class="post-title" style="margin: 14px 0;color:#50585D">Python 语音识别</h1>
+
+                    <div class="post-meta">
+                        Post on<span class="fa fa-clock-o"></span>
+                        <time datetime="2016-04-06T23:53:32.000Z"
+                              itemprop="datePublished">2016-04-07</time>
+                    </div>
+    </span>
+
+        <section class="post-content">
+            <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>对着电脑吼一声,自动打开浏览器中的默认网站。</p>
+<p>例如，对着笔记本电脑吼一声“百度”，浏览器自动打开百度首页</p>
+<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><ol>
+<li><p>录制wav文件</p>
+<p> 使用pyAudio模块</p>
+</li>
+<li><p>wav文件转为文本</p>
+<p> 使用百度语音识别功能</p>
+</li>
+<li><p>打开浏览器</p>
+<p> 使用webbrowser模块</p>
+</li>
+</ol>
+<h2 id="安装模块"><a href="#安装模块" class="headerlink" title="安装模块"></a>安装模块</h2><p>使用pyAudio模块， mac+python3下安装步骤如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$brew install portaudio</span><br><span class="line">$pip3 install pyaudio</span><br></pre></td></tr></table></figure>
+<h2 id="录制wav文件"><a href="#录制wav文件" class="headerlink" title="录制wav文件"></a>录制wav文件</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> wave, pyaudio</span><br><span class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">CHUNK = <span class="number">1024</span> <span class="comment"># 缓存块的大小</span></span><br><span class="line">FORMAT = pyaudio.paInt16 <span class="comment"># 取样值的量化格式</span></span><br><span class="line">RATE = <span class="number">8000</span>  <span class="comment"># 取样频率，百度语音识别库指定8000</span></span><br><span class="line">CHANNELS = <span class="number">1</span> <span class="comment"># 声道数，百度语音识别库指定1</span></span><br><span class="line">RECORD_SECONDS = <span class="number">5</span> <span class="comment"># 时间段，秒</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">record_wave</span><span class="params">(to_dir=None)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> to_dir <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line">        to_dir = <span class="string">"./"</span></span><br><span class="line"></span><br><span class="line">    pa = pyaudio.PyAudio()</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># format 取样值的量化格式</span></span><br><span class="line">    <span class="comment"># channels 声道数</span></span><br><span class="line">    <span class="comment"># rate 取样频率，一秒内对声音信号的采集次数</span></span><br><span class="line">    <span class="comment"># input 输入流标志</span></span><br><span class="line">    <span class="comment"># frames_per_buffer 底层缓存块的大小</span></span><br><span class="line">    stream = pa.open(format = FORMAT,</span><br><span class="line">                     channels = CHANNELS,</span><br><span class="line">                     rate = RATE,</span><br><span class="line">                     input = <span class="keyword">True</span>,</span><br><span class="line">                     frames_per_buffer = CHUNK)</span><br><span class="line"></span><br><span class="line">    print(<span class="string">"* recording"</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># </span></span><br><span class="line">    save_buffer = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, int(RATE / CHUNK * RECORD_SECONDS)):</span><br><span class="line">        audio_data = stream.read(CHUNK)</span><br><span class="line">        save_buffer.append(audio_data)</span><br><span class="line"></span><br><span class="line">    print(<span class="string">"* done recording"</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># stop</span></span><br><span class="line">    stream.stop_stream()</span><br><span class="line">    stream.close()</span><br><span class="line">    pa.terminate()</span><br><span class="line"></span><br><span class="line">    <span class="comment"># wav path</span></span><br><span class="line">    file_name = datetime.now().strftime(<span class="string">"%Y-%m-%d_%H_%M_%S"</span>)+<span class="string">".wav"</span></span><br><span class="line">    <span class="keyword">if</span> to_dir.endswith(<span class="string">'/'</span>):</span><br><span class="line">        file_path = to_dir + file_name</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        file_path = to_dir + <span class="string">"/"</span> + file_name</span><br><span class="line"></span><br><span class="line">    <span class="comment"># save file</span></span><br><span class="line">    wf = wave.open(file_path, <span class="string">'wb'</span>)</span><br><span class="line">    wf.setnchannels(CHANNELS)</span><br><span class="line">    wf.setsampwidth(pa.get_sample_size(FORMAT))</span><br><span class="line">    wf.setframerate(RATE)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 注意join 前的类型，如果是str类型会出错</span></span><br><span class="line">    wf.writeframes(<span class="string">b''</span>.join(save_buffer))</span><br><span class="line">    wf.close()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> file_path</span><br></pre></td></tr></table></figure>
+<h2 id="wav转为文本"><a href="#wav转为文本" class="headerlink" title="wav转为文本"></a>wav转为文本</h2><p>按照官网给的例子，无法正确获取数据</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request</span><br><span class="line"><span class="keyword">import</span> json, base64, uuid, os</span><br><span class="line"><span class="keyword">import</span> wave</span><br><span class="line"><span class="keyword">import</span> pycurl</span><br><span class="line"><span class="keyword">import</span> io</span><br><span class="line"></span><br><span class="line">	<span class="comment"># 以下3个变量是百度相关，请替换成自己的值</span></span><br><span class="line">bda_app_id = <span class="string">"XXXXXXXXX"</span></span><br><span class="line">bda_api_key = <span class="string">"XXXXXXXXX"</span></span><br><span class="line">bda_secret_key = <span class="string">"XXXXXXXXX"</span></span><br><span class="line"></span><br><span class="line">bda_access_token = <span class="string">""</span></span><br><span class="line">bda_expires_in = <span class="string">""</span></span><br><span class="line">ret_text = <span class="string">""</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 获取唯一标识符</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_mac_address</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> uuid.UUID(int=uuid.getnode()).hex[<span class="number">-12</span>:]</span><br><span class="line"></span><br><span class="line">	<span class="comment"># 获取百度token</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_access_token</span><span class="params">()</span>:</span></span><br><span class="line">    url = <span class="string">"https://openapi.baidu.com/oauth/2.0/token?grant_type=client_credentials&amp;client_id=ZrjLfF5Rh7pOL66gaOmDGnXn&amp;client_secret=16bac9645093ca2632ebb81015ff7544"</span></span><br><span class="line"></span><br><span class="line">    req = request.Request(url, method=<span class="string">"POST"</span>)</span><br><span class="line">    resp = request.urlopen(req)</span><br><span class="line">    data = resp.read().decode(<span class="string">'utf-8'</span>)</span><br><span class="line">    json_data = json.loads(data)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">global</span> bda_access_token</span><br><span class="line">    bda_access_token = json_data[<span class="string">'access_token'</span>]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> bda_access_token</span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取wav文件内容</span></span><br><span class="line">CHUNK = <span class="number">1024</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_wav_data</span><span class="params">(wav_path)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> wav_path <span class="keyword">is</span> <span class="keyword">None</span> <span class="keyword">or</span> len(wav_path) == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">None</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 使用"rb"(二进制模式)打开文件</span></span><br><span class="line">    wav_file = wave.open(wav_path, <span class="string">'rb'</span>)</span><br><span class="line">    nframes = wav_file.getnframes()</span><br><span class="line">    audio_data = wav_file.readframes(nframes)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> audio_data, nframes</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line"><span class="comment"># 解析返回值</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dump_res</span><span class="params">(buf)</span>:</span></span><br><span class="line">    resp_json = json.loads(buf.decode(<span class="string">'utf-8'</span>))</span><br><span class="line">    ret = resp_json[<span class="string">'result'</span>]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">global</span> ret_text</span><br><span class="line">    ret_text = ret[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">    print(buf)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">wav_to_text</span><span class="params">(wav_path)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> wav_path <span class="keyword">is</span> <span class="keyword">None</span> <span class="keyword">or</span> len(wav_path) == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">None</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> len(bda_access_token) == <span class="number">0</span>:</span><br><span class="line">        get_access_token()</span><br><span class="line">        <span class="keyword">if</span> len(bda_access_token) == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">None</span></span><br><span class="line"></span><br><span class="line">    data, f_len = get_wav_data(wav_path)</span><br><span class="line"></span><br><span class="line">    url = <span class="string">'http://vop.baidu.com/server_api?cuid='</span> + get_mac_address() + <span class="string">'&amp;token='</span> + bda_access_token</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 必须是list，不能是dict</span></span><br><span class="line">    http_header = [</span><br><span class="line">        <span class="string">'Content-Type: audio/pcm; rate=8000'</span>,</span><br><span class="line">        <span class="string">'Content-Length: %d'</span> % f_len</span><br><span class="line">    ]</span><br><span class="line"></span><br><span class="line">    c = pycurl.Curl()</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># url</span></span><br><span class="line">    c.setopt(pycurl.URL, str(url)) </span><br><span class="line">    </span><br><span class="line">    <span class="comment"># header</span></span><br><span class="line">    c.setopt(c.HTTPHEADER, http_header) </span><br><span class="line">    </span><br><span class="line">    <span class="comment"># Method</span></span><br><span class="line">    c.setopt(c.POST, <span class="number">1</span>) </span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 连接超时时间</span></span><br><span class="line">    c.setopt(c.CONNECTTIMEOUT, <span class="number">30</span>) </span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 请求超时时间</span></span><br><span class="line">    c.setopt(c.TIMEOUT, <span class="number">30</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 返回信息回调</span></span><br><span class="line">    c.setopt(c.WRITEFUNCTION, dump_res)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># post 的信息</span></span><br><span class="line">    c.setopt(c.POSTFIELDS, data)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># post的信息长度</span></span><br><span class="line">    c.setopt(c.POSTFIELDSIZE, f_len)</span><br><span class="line">    </span><br><span class="line">    c.perform() </span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> ret_text</span><br></pre></td></tr></table></figure>
+<h2 id="打开浏览器"><a href="#打开浏览器" class="headerlink" title="打开浏览器"></a>打开浏览器</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> webbrowser</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">browser_open_text</span><span class="params">(text)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> text <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">    url = <span class="string">"http://www.baidu.com"</span></span><br><span class="line">    <span class="keyword">if</span> text.startswith(<span class="string">"谷歌"</span>) <span class="keyword">or</span> text.startswith(<span class="string">"google"</span>):</span><br><span class="line">        url = <span class="string">"http://www.google.com"</span></span><br><span class="line">    <span class="keyword">elif</span> text.startswith(<span class="string">"必应"</span>) <span class="keyword">or</span> text.startswith(<span class="string">"bing"</span>):</span><br><span class="line">        url = <span class="string">"http://cn.bing.com"</span></span><br><span class="line"></span><br><span class="line">    webbrowser.open_new_tab(url)</span><br></pre></td></tr></table></figure>
+        </section>
+        <hr/>
+        <nav class="pagination" style="width:auto" role="pagination">
+            
+            <a data-pjax class="newer-posts" href="/2016/04/16/scoket1/">← Prev Post</a>
+            
+            <a class="share-button" data-original-title title>Share this Post</a>
+            
+            <a data-pjax class="older-posts" href="/2016/01/11/installPython/">Next Post →</a>
+            
+        </nav>
+        <br/>
+        <br/>
+        <section id="comment">
+            <div id="comment-box"></div>
+        </section>
+
+
+    </article>
+</main>
+
+
+  
+<footer class="site-footer">
+    
+    <div class="inner">
+        <section class="copyright"><a href="/"></a> &copy; xyj的博客 2014</section>
+        <section class="poweredby">Published with <a target="_blank" href="http://hexo.io/">Hexo   </a> and Theme by <a target="_blank" href="https://github.com/yuche/hexo-theme-kael">Kael</a></section>
+    </div>
+</footer>
+</div>
+</div><!-- /scroller -->
+
+</div><!-- /pusher -->
+</div><!-- /container -->
+</div>
+
+<!-- Easter eggs -->
+
+<div class="egg animated">
+    <a id="close-button" href="#">X</a>
+    <div class="block">
+        <div class="loading">
+            <span class="ball1"></span>
+            <span class="ball2"></span>
+        </div>
+    </div>
+</div>
+  
+<script src="//cdn.staticfile.org/jquery/1.11.0/jquery.min.js"></script>
+<script>
+    if (!window.jQuery) {
+        var script = document.createElement('script');
+        script.src = "/js/jquery.min.js";
+        document.body.appendChild(script);
+    }
+</script>
+<script type="text/javascript" src="/js/lib.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+
+
+
+
+
+
+
+</body>
+</html>
